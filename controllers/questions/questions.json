@@ -1,0 +1,9 @@
+[{
+  "question_id": 1,
+  "question": "How to stay healthy?",
+  "question_img": "../../../images/profile-pic.jpg",
+  "user_id": 1,
+  "time": 1,
+  "genre": ["health","education"],
+  "answers": [1,2,3]
+}]

@@ -1,0 +1,20 @@
+{
+  "userId": 123,
+  "profilepic": "/users/pic.jpg",
+  "answersPosted": [
+    {
+      "answerId": 345,
+      "questionId": 234,
+      "userId": 23445,
+      "answerText": "this is a sample answer"
+    }
+  ],
+  "questionsAsked": [
+    {
+      "questionId": 234,
+      "answerText": "this is a sample answer"
+    }
+  ],
+  "dob": ""
+
+}

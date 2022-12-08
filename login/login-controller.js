@@ -1,4 +1,7 @@
-const checkIfUserIsRegistered = (loginObj)=>{
+const checkIfUserIsRegistered = (req,res)=>{
+
+    const loginDetails = req.body;
+    console.log(loginDetails);
 
 
 }
@@ -7,7 +10,7 @@ const checkIfUserIsRegistered = (loginObj)=>{
 const LoginController = (app)=>{
 
 
-    app.post("/signin",checkIfUserIsRegistered(loginObj))
+    app.post("/signin",checkIfUserIsRegistered)
 
 }
 

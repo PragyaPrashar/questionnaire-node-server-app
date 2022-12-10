@@ -1,6 +1,6 @@
 [
   {
-    "user_id": 1,
+    "_id": 1,
     "username": "Pragya Prashar",
     "user_profile_pic": "../../../images/profile-pic.jpg",
     "user_status": "“Not all those who wander are lost.”",

@@ -12,20 +12,22 @@ const checkIfUserIsRegistered = async (req,res)=>{
         // res.json(userFromDb);
         if(userFromDb.password!==loginDetails.password){
             console.log("Password doesn't match. Please check the password")
-            res.sendStatus(401);
+            res.json("");
         }else{
             console.log("Logging In...")
-            res.sendStatus(200);
+
+            res.json(userFromDb);
         }
     }else {
         console.log("Cannot login since user is not registered")
-        res.sendStatus(200);
+        res.json(userFromDb);
+
     }
 }
 
 
 const LoginController = (app)=>{
-    app.post("/login",checkIfUserIsRegistered)
+    app.post("/",checkIfUserIsRegistered)
 }
 
 export default LoginController;

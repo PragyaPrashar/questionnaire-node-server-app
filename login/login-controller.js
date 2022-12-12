@@ -1,11 +1,10 @@
-import {findByUsername} from "./login-dao.js";
-
+import * as userDao from "../users/users-dao.js"
 const checkIfUserIsRegistered = async (req,res)=>{
 
     const loginDetails = req.body;
     const username = loginDetails._id;
     console.log("checking if user "+username +" is already registered...");
-    const userFromDb = await findByUsername(username);
+    const userFromDb = await userDao.findUserById(username);
     console.log("status is "+userFromDb);
     if(userFromDb!==null){
         console.log("User is already present. Checking password In...")

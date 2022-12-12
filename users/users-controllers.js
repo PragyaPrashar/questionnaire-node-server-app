@@ -1,13 +1,13 @@
 import * as userDao from './users-dao.js';
 
-const createUser = async (req, res) => {
-    const newUser = req.body;
-    console.log("this is before dao")
-    const insertedUser = await userDao.createUser(newUser);
-    console.log("this is after dao")
-
-    res.json(insertedUser);
-}
+// const createUser = async (req, res) => {
+//     const newUser = req.body;
+//     console.log("this is before dao")
+//     const insertedUser = await userDao.createUser(newUser);
+//     console.log("this is after dao")
+//
+//     res.json(insertedUser);
+// }
 
 
 const findUserById = async (req, res) => {
@@ -32,7 +32,7 @@ const updateUser = async (req, res) => {
 const UserController = (app) =>{
     console.log("this is controller")
 
-    app.post('/api/user', createUser);
+    // app.post('/api/user', createUser);
     app.get('/api/user/:uid', findUserById);
     app.put('/api/user/:uid', updateUser);
     // app.delete('api/user/:uid', deleteUser);

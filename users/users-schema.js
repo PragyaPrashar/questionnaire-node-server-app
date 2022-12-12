@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 const userSchema=mongoose.Schema({
                                  _id: String,
                                  username: String,
-                                 user_profile_pic: {data: Buffer, contentType: String},
+                                 user_profile_pic: String,
                                  user_status: String,
                                  dob: String,
                                  address: String,

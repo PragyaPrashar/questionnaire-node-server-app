@@ -1,4 +1,5 @@
 import * as userDao from './users-dao.js';
+import {findAllUser} from "./users-dao.js";
 
 // const createUser = async (req, res) => {
 //     const newUser = req.body;
@@ -22,6 +23,12 @@ const updateUser = async (req, res) => {
     const status = await userDao.updateUser(userIdToUpdate, updates);
     res.json(status);
 }
+
+const findAllUsers=async(req, res)=>{
+    const users=await userDao.findAllUser();
+    res.json(users)
+}
+
 //
 // const deleteUser = async (req, res) => {
 //     const userIdToDelete = req.params.uid;
@@ -34,6 +41,7 @@ const UserController = (app) =>{
 
     // app.post('/api/user', createUser);
     app.get('/api/user/:uid', findUserById);
+    app.get('/api/user', findAllUsers);
     app.put('/api/user/:uid', updateUser);
     // app.delete('api/user/:uid', deleteUser);
 }

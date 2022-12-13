@@ -6,7 +6,7 @@ const questionsSchema=mongoose.Schema({
     question_img: {data: Buffer, contentType: String},
     time: String,
     user_id: String,
-    genre:{type:Array, of: String},
+    genre: String,
     answers: {type: Array, of: Number}
 
 

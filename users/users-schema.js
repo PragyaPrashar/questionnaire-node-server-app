@@ -10,10 +10,8 @@ const userSchema=mongoose.Schema({
                                  password:  String,
                                  questionsAsked: {type: Array, of: Number},
                                  answersAnswered: {type:Array, of:Number},
-                                 followers: {type: Array, of: Number},
-                                 following: {type: Array, of: Number},
-                                 comments: {type: Array, of: Number}}
-
-    ,
+                                 followers: {type: Array, of: String},
+                                 following: {type: Array, of: String},
+                                 comments: {type: Array, of: Number}},
                              {collections: 'users'});
 export default userSchema;

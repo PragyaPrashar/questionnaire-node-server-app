@@ -28,6 +28,21 @@ const findAllUsers=async(req, res)=>{
     const users=await userDao.findAllUser();
     res.json(users)
 }
+const followingUser = async (req,res)=>{
+    const loggedInUserId = req.params.uid
+    const userToFollowId = req.params.anotherUserUid
+    let loggedInUser = await userDao.findUserById(loggedInUserId);
+    loggedInUser.following.push(userToFollowId);
+    const updatedObj = await userDao.updateUser(loggedInUserId,loggedInUser);
+    let userToFollow = await userDao.findUserById(userToFollowId);
+    userToFollow.followers.push(loggedInUserId)
+    const userToFollowUpdatedObj = await userDao.updateUser(userToFollowId,userToFollow);
+
+    loggedInUser = await userDao.findUserById(loggedInUserId);
+    res.json(loggedInUser)
+
+}
+
 
 //
 // const deleteUser = async (req, res) => {
@@ -44,6 +59,7 @@ const UserController = (app) =>{
     app.get('/api/user', findAllUsers);
     app.put('/api/user/:uid', updateUser);
     // app.delete('api/user/:uid', deleteUser);
+    app.get("/api/user/:uid/:anotherUserUid",followingUser)
 }
 export default UserController;
 

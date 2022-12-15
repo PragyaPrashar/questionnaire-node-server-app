@@ -5,6 +5,7 @@ import QuestionController from"./questions/questions-controller.js";
 import mongoose from "mongoose";
 import LoginController from "./login/login-controller.js";
 import RegisterController from "./register/register-controller.js"
+import AnswersControllers from "./answers/answers-controllers.js";
 
 const MONGO_LOCAL='mongodb://localhost:27017/quans';
 const app=express()
@@ -18,5 +19,6 @@ UserController(app);
 QuestionController(app);
 LoginController(app);
 RegisterController(app);
+AnswersControllers(app);
 console.log("thisisnode")
 app.listen(process.env.PORT||4000);
